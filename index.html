@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Secreto 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="hearts" id="hearts"></div>
+
+    <!-- Input Screen -->
+    <div class="container" id="inputScreen">
+        <h1>Código Secreto</h1>
+        <p class="subtitle">Cole o código Morse para revelar a mensagem 💌</p>
+        
+        <textarea 
+            class="morse-input" 
+            id="morseInput" 
+            placeholder="Cole aqui o código Morse russo..."
+        ></textarea>
+        
+        <button class="btn" onclick="checkMorse()">✨ Receber Código</button>
+        
+        <p class="hint">Apenas o código correto abrirá o que está guardado com carinho...</p>
+        <p class="error" id="errorMsg">Esse não é o código certo... tente novamente 💔</p>
+    </div>
+
+    <!-- Declaration Screen -->
+    <div class="declaration" id="declaration">
+        <div class="deco deco-1">🌸</div>
+        <div class="deco deco-2">💕</div>
+        <div class="deco deco-3">✨</div>
+        <div class="deco deco-4">🌷</div>
+
+        <div class="declaration-content">
+            <h2>Isabelly</h2>
+            
+            <div class="message">
+                <p>Seu nome é especial.</p>
+                <p>A lembrança dele vem aos poucos<br>e permanece na minha memória.</p>
+                <p>Às vezes, não preciso ouvir sua voz...</p>
+                <p>porque o eco dela já vive em mim.</p>
+            </div>
+
+            <div class="big-heart">💗</div>
+            
+            <p class="signature">Com todo carinho</p>
+
+            <button class="btn btn-outline" onclick="openConverter()" style="margin-top: 40px;">
+                ✍️ Criar meu próprio código Morse
+            </button>
+        </div>
+    </div>
+
+    <!-- Converter Screen -->
+    <div class="converter" id="converter">
+        <button class="back-btn" onclick="closeConverter()" title="Voltar">←</button>
+        
+        <div class="converter-box">
+            <h2>Conversor Morse</h2>
+            <p class="subtitle">Escreva qualquer mensagem e transforme em código Morse 💕</p>
+
+            <label class="label">Sua mensagem:</label>
+            <textarea 
+                class="text-input" 
+                id="textToConvert" 
+                placeholder="Digite aqui o que quiser dizer..."
+            ></textarea>
+
+            <div class="btn-group">
+                <button class="btn" onclick="convertToMorse()">Converter para Morse ✨</button>
+                <button class="btn btn-secondary" onclick="clearConverter()">Limpar</button>
+            </div>
+
+            <label class="label" style="margin-top: 25px;">Código Morse:</label>
+            <textarea 
+                class="morse-output" 
+                id="morseResult" 
+                readonly 
+                placeholder="O código aparecerá aqui..."
+            ></textarea>
+
+            <button class="btn btn-outline" onclick="copyMorse()" style="margin-top: 15px;">
+                📋 Copiar código
+            </button>
+            <p class="copy-msg" id="copyMsg">Código copiado com sucesso! 💖</p>
+
+            <!-- Sharing Section -->
+            <div class="share-section" id="shareSection">
+                <p class="share-title">Enviar o código 💌</p>
+
+                <label class="label">Número do WhatsApp (com DDI):</label>
+                <input 
+                    type="text" 
+                    class="phone-input" 
+                    id="phoneNumber" 
+                    placeholder="Ex: 5511999999999"
+                >
+
+                <div class="btn-group share-buttons">
+                    <button class="btn btn-whatsapp" onclick="sendWhatsApp()">
+                        📱 Enviar no WhatsApp
+                    </button>
+                    <button class="btn btn-instagram" onclick="sendInstagram()">
+                        📸 Abrir Instagram
+                    </button>
+                </div>
+
+                <p class="share-hint">
+                    No Instagram: o código será copiado automaticamente.  
+                    É só colar no Direct (mensagem privada).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
